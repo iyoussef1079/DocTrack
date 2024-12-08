@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: doctrack-backend
+    rootDirectory: apps/backend
+    env: node
+    buildCommand: cd ../.. && turbo run build --filter=backend
+    startCommand: cd apps/backend && npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+    plan: free
